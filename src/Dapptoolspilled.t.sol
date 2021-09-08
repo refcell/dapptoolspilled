@@ -11,11 +11,12 @@ contract DapptoolspilledTest is DSTest {
         dapptoolspilled = new Dapptoolspilled();
     }
 
-    function testFail_basic_sanity() public {
-        assertTrue(false);
+    function testGetInitialValue() public {
+        assertTrue(dapptoolspilled.get() == 0);
     }
 
-    function test_basic_sanity() public {
-        assertTrue(true);
+    function testSetValue(uint256 set_val) public {
+        dapptoolspilled.set(set_val);
+        assertTrue(dapptoolspilled.get() == set_val);
     }
 }
